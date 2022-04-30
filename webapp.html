@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta property="og:title" content="Open the attendance board"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content=""/>
+<meta property="og:description" content="Check the schedule and try to do attendance check"/>
+<meta property="og:image" content="https://user-images.githubusercontent.com/88052634/127833529-7119b6c0-55bb-4e4e-8ccb-750c7d3aa8f0.png"/>
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="627" />
+<title></title>
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+
+<style>
+#mybutton{
+	width: 1120px;
+	height: 400px;
+	margin: 0px;
+	padding: 0px;
+	position: relative; top: -224px;
+}
+#attendance_header{
+	position: relative;top: -34px;
+	margin-top: 0px; padding-top: 0px;
+}
+#attendance_article{
+	position: relative;top: -130px; //-138 default, +8
+	margin-top: 0px; padding-top: 0px;
+}
+
+td{
+border-bottom: 1px solid;
+
+}
+tr{
+border-bottom: 1px solid;
+}
+
+#mytable{
+	text-align: center;
+	position: relative; top: -204px; // default 224 ,+8
+	background-color: white;
+	border-top: 4px solid;
+	border-bottom: 4px solid;
+	
+	
+	border-color: black;
+	
+}
+
+.modal-backdrop
+{
+    opacity:0 !important;
+}
+
+
+#checking{
+	height: 100vh;
+	width: 100vw;
+}
+
+.modal.modal-fullscreen .modal-dialog {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  max-width: none; 
+}
+
+.modal.modal-fullscreen .modal-content {
+  height: 110vh;
+  width: 112vw;
+  border-radius: 0;
+  border: none; 
+  
+}
+
+.modal.modal-fullscreen .modal-body {
+  overflow-y: auto; 
+  
+}
+
+
+
+
+
+</style>
+</head>
+<body style="margin-top: 0px; padding-top: 0px;">
+<div>
+  
+<iframe id="attendance_header" src="[YourSpreadSheetHeaderURL]&single=true&amp;range=A1:AJ7" height="320px" width="1120px" scrolling="no" style="border:none;"></iframe>
+<iframe id="attendance_article" src="[YourSpreadSheetArticleURL]" height="1100px" width="1120px" style="border:none;"></iframe>
+</div>
+
+
+<table id="mytable" width="1120px" height="400px" bgcolor="white">
+  <tr >
+    <td width="500px" style="border-right:0.1rem gray solid;"><img name="pencil" src="https://user-images.githubusercontent.com/88052634/127812222-eedbc4df-3147-4561-aaa3-25c831903bc6.png" width="400" onclick="window.open('[YourGoogleFormURL]','_blank')" ></td>
+    <td width="500px"><img name="reload" src="https://user-images.githubusercontent.com/88052634/127812483-8c188142-43df-4479-b08e-80f816749367.png" data-toggle="modal" data-target="#checkRecord" width="400"></td>
+  </tr>
+</table>
+
+
+
+
+
+
+<div class="modal fade modal-fullscreen" id="checkRecord" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2"
+  aria-hidden="true" scrolling="no">
+  <div class="modal-dialog" role="document" scrolling="no">
+    <!--Content-->
+    <div class="modal-content text-center" scrolling="no">
+      <!--Body-->
+      <div class="modal-body" style="overflow-y:hidden" scrolling="no">
+		<div style="font-size:4rem; padding: 3rem;">도장일정</div>
+	
+
+<iframe id="checking" src="[YourWebAppURL]"  style="  height: 190vh; width:110vw; overflow-y:hidden; scrolling:no; display:yes; " scrolling="no" style="border:none;" allowTransparency="true"></iframe>
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer flex-center">
+
+        <a type="button" class="btn btn-outline-dark btn-block waves-effect" data-dismiss="modal" style="font-size:4rem; padding: 3rem;">닫기</a>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>
