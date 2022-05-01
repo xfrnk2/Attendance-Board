@@ -35,3 +35,4 @@ Of course They could check their every records with the shortcut on the web app 
 
 - This web app has been used by about 1000 people belong to some organizations. So the workflow is kind of stable as far as I have ever experienced.
 - If you would like to use this web app as soon as you have a chance, please contact to my email`xfrnk2@gmail.com`.
+- Sample Link : https://bit.ly/샘플지원-출석부
